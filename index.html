@@ -1,560 +1,631 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>正しいピアノ姿勢マスター講座 | 美しい演奏への第一歩</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- 既存のLPに合わせてフォントをNoto Sans JPに絞り込み -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+        line-height: 1.7;
+        color: #333;
+        /* 背景色を既存LPに合わせて調整 */
+        background-color: #f8f8f8;
+        min-height: 100vh;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        /* Header */
-        .hero-header {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path d="M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,300 L0,300 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
-            color: white;
-            padding: 80px 0 120px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+      /* Header */
+      .hero-header {
+        /* 背景を既存LPに合わせて調整 */
+        background: linear-gradient(135deg, #e0f2f7 0%, #d1e3ff 100%);
+        color: #333;
+        padding: 80px 0 100px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .hero-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s infinite linear;
-        }
+      .hero-title {
+        /* フォントをNoto Sans JPに統一 */
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #0056b3;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+      }
 
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            100% { transform: translateY(-100px) rotate(360deg); }
-        }
+      .hero-subtitle {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 0; /* CTAボタンがないためマージンを調整 */
+        opacity: 1;
+        color: #555;
+      }
 
+      /* Main Content */
+      .main-content {
+        background: white;
+        margin-top: -60px; /* ヘッダーとの重なりを維持し、柔らかな印象に */
+        border-radius: 30px 30px 0 0;
+        position: relative;
+        z-index: 2;
+        padding: 60px 0;
+      }
+
+      /* Section Styles */
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 50px;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 4px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        border-radius: 2px;
+      }
+
+      /* Worries Section */
+      .worries-section {
+        padding: 40px 0;
+        background: #fff; /* 背景を白に */
+      }
+
+      .worry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .worry-card {
+        background: #f8f9ff;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 1px solid #e8f2ff;
+      }
+
+      .worry-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .worry-icon {
+        width: 50px;
+        height: 50px;
+        background: none;
+        border-radius: 0;
+        margin-bottom: 15px;
+        font-size: 2.5rem;
+        color: #667eea;
+      }
+
+      .worry-text {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 8px;
+      }
+
+      .worry-description {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+      }
+
+      /* Solution Banner */
+      .solution-banner {
+        background-color: #ffffe0;
+        border: 2px solid #ffd700;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: center;
+        margin: 40px auto;
+        max-width: 900px;
+      }
+
+      .solution-text {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      .solution-highlight {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #d9534f;
+        display: block;
+      }
+
+      /* Technique Section */
+      .technique-section {
+        padding: 60px 0;
+        background-color: #f8f8f8;
+        border-radius: 15px;
+        margin: 40px 0;
+      }
+
+      .technique-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .technique-text h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: 'Noto Sans JP', sans-serif;
+        color: #007bff;
+      }
+
+      .technique-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+      }
+
+      .technique-image img {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ★★★ START: 新しく追加したセクションのスタイル ★★★ */
+      .deep-dive-section {
+        padding: 60px 0;
+        margin: 40px 0;
+      }
+
+      .deep-dive-section .text-block {
+        max-width: 800px;
+        margin: 0 auto 40px;
+        padding: 25px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-left: 5px solid #667eea;
+      }
+
+      .deep-dive-section .text-block p {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .deep-dive-section .text-block strong {
+        color: #d9534f;
+        font-weight: 700;
+      }
+
+      .deep-dive-section .highlight-box {
+        text-align: center;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #f0f8ff;
+        border-radius: 10px;
+        border: 2px dashed #add8e6;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #0056b3;
+      }
+
+      .deep-dive-section .result-content {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 40px;
+        align-items: center;
+        margin: 60px 0;
+      }
+
+      .deep-dive-section .result-image img {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .deep-dive-section .result-text {
+        text-align: center;
+      }
+
+      .deep-dive-section .result-text .big-quote {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #d9534f;
+        margin: 20px 0;
+        line-height: 1.3;
+      }
+
+      .deep-dive-section .parent-thoughts-box {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #fff8e1;
+        border-radius: 10px;
+        border: 1px solid #ffe082;
+      }
+
+      .deep-dive-section .parent-thoughts-box p {
+        margin-bottom: 15px;
+      }
+      .deep-dive-section .parent-thoughts-box p.conclusion {
+        font-weight: 700;
+        color: #c62828;
+        margin-top: 20px;
+      }
+      /* ★★★ END: 新しく追加したセクションのスタイル ★★★ */
+
+      /* Benefits Section */
+      .benefits-section {
+        padding: 60px 0;
+        background-color: #f8f8f8;
+        border-radius: 15px;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .benefit-card {
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 30px 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-3px);
+      }
+
+      .benefit-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      .benefit-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      .benefit-description {
+        color: #7f8c8d;
+        line-height: 1.6;
+        font-size: 0.85rem;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: #333;
+        color: white;
+        padding: 60px 0;
+        border-radius: 15px;
+        margin: 60px 0 0;
+      }
+
+      .contact-section .section-title {
+        color: white;
+      }
+      .contact-section .section-title::after {
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* 1列に変更 */
+        gap: 30px;
+        margin-top: 40px;
+        max-width: 400px; /* 中央に寄せるために幅を制限 */
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .contact-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 25px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .contact-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      .contact-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .contact-info {
+        font-size: 1rem;
+      }
+      .contact-info a {
+        color: white;
+      }
+
+      .company-info {
+        text-align: center;
+        margin-top: 40px;
+        opacity: 0.8;
+      }
+      .company-info h3 {
+        margin-bottom: 8px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
+          font-size: 2.2rem;
         }
-
         .hero-subtitle {
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
+          font-size: 1rem;
         }
-
-        .hero-cta {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
-        }
-
-        /* Main Content */
-        .main-content {
-            background: white;
-            margin-top: -60px;
-            border-radius: 30px 30px 0 0;
-            position: relative;
-            z-index: 2;
-            padding: 80px 0 60px;
-        }
-
-        /* Worries Section */
-        .worries-section {
-            padding: 60px 0;
-            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
-            margin: 40px 0;
-            border-radius: 20px;
-        }
-
         .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 60px;
-            position: relative;
+          font-size: 1.8rem;
         }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 2px;
+        .technique-content,
+        .deep-dive-section .result-content {
+          grid-template-columns: 1fr;
+          gap: 30px;
         }
-
-        .worry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
+        /* 画像が上、テキストが下に来るように */
+        .deep-dive-section .result-content .result-image {
+            order: -1;
         }
-
-        .worry-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .worry-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-        }
-
-        .worry-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .worry-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: white;
-        }
-
-        .worry-text {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .worry-description {
-            color: #7f8c8d;
-            font-size: 0.95rem;
-        }
-
-        /* Solution Banner */
-        .solution-banner {
-            background: linear-gradient(45deg, #ffeaa7, #fdcb6e);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin: 60px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .solution-banner::before {
-            content: '✨';
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 2rem;
-            animation: sparkle 2s infinite;
-        }
-
-        @keyframes sparkle {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.2) rotate(180deg); }
-        }
-
-        .solution-text {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .solution-highlight {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #e17055;
-            display: block;
-        }
-
-        /* Technique Section */
-        .technique-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-            color: white;
-            border-radius: 20px;
-            margin: 60px 0;
-        }
-
-        .technique-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .technique-text h3 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .technique-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            opacity: 0.95;
-        }
-
-        .technique-image {
-            text-align: center;
-        }
-
-        .technique-image img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        /* Benefits Section */
-        .benefits-section {
-            padding: 80px 0;
-        }
-
         .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }
-
-        .benefit-card {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .benefit-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .benefit-description {
-            color: #7f8c8d;
-            line-height: 1.6;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 80px 0;
-            border-radius: 20px;
-            margin: 60px 0 0;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .contact-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .contact-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .contact-info {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .contact-cta {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            margin-top: 40px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(238, 90, 36, 0.3);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .technique-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .worry-grid,
-            .benefits-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .container {
-                padding: 0 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .main-content {
-                margin-top: -40px;
-                padding: 60px 0 40px;
-            }
-
-            .worries-section,
-            .technique-section,
-            .benefits-section,
-            .contact-section {
-                padding: 60px 0;
-                margin: 40px 0;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Hero Header -->
     <header class="hero-header">
-        <div class="container">
-            <h1 class="hero-title">正しいピアノ姿勢マスター講座</h1>
-            <p class="hero-subtitle">お子さんのピアノ上達は、正しい姿勢と足元から始まります</p>
-            </div>
+      <div class="container">
+        <h1 class="hero-title">正しいピアノ姿勢マスター講座</h1>
+        <p class="hero-subtitle">
+          お子さんのピアノ上達は、正しい姿勢と足元から始まります
+        </p>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="container">
-            <!-- Worries Section -->
-            <section class="worries-section">
-                <h2 class="section-title">お子さんのピアノ、こんなお悩みありませんか？</h2>
-                
-                <div class="worry-grid">
-                    <div class="worry-card">
-                        <div class="worry-icon">🎹</div>
-                        <div class="worry-text">真ん中の「ド」にサッと指が置けない</div>
-                        <div class="worry-description">鍵盤の位置感覚がつかめず、毎回手探りで探してしまう</div>
-                    </div>
-                    
-                    <div class="worry-card">
-                        <div class="worry-icon">👆</div>
-                        <div class="worry-text">「指のお引越し」で迷ってしまう</div>
-                        <div class="worry-description">スムーズな指の移動ができず、演奏が途切れがちになる</div>
-                    </div>
-                    
-                    <div class="worry-card">
-                        <div class="worry-icon">✋</div>
-                        <div class="worry-text">「手の形が悪い」と言われる</div>
-                        <div class="worry-description">正しい手の形がわからず、先生に注意されることが多い</div>
-                    </div>
-                    
-                    <div class="worry-card">
-                        <div class="worry-icon">🎵</div>
-                        <div class="worry-text">「もっと表情豊かに」と言われる</div>
-                        <div class="worry-description">感情を込めて弾こうとすると、技術的にぐちゃぐちゃになってしまう</div>
-                    </div>
+      <div class="container">
+        <!-- Worries Section -->
+        <section class="worries-section">
+          <h2 class="section-title">お子さんのピアノ、こんなお悩みありませんか？</h2>
+
+          <div class="worry-grid">
+            <div class="worry-card">
+              <div class="worry-icon">🎹</div>
+              <div class="worry-text">真ん中の「ド」にサッと指が置けない</div>
+              <div class="worry-description">
+                鍵盤の位置感覚がつかめず、毎回手探りで探してしまう
+              </div>
+            </div>
+
+            <div class="worry-card">
+              <div class="worry-icon">👆</div>
+              <div class="worry-text">「指のお引越し」で迷ってしまう</div>
+              <div class="worry-description">
+                スムーズな指の移動ができず、演奏が途切れがちになる
+              </div>
+            </div>
+
+            <div class="worry-card">
+              <div class="worry-icon">✋</div>
+              <div class="worry-text">「手の形が悪い」と言われる</div>
+              <div class="worry-description">
+                正しい手の形がわからず、先生に注意されることが多い
+              </div>
+            </div>
+
+            <div class="worry-card">
+              <div class="worry-icon">🎵</div>
+              <div class="worry-text">「もっと表情豊かに」と言われる</div>
+              <div class="worry-description">
+                感情を込めて弾こうとすると、技術的にぐちゃぐちゃになってしまう
+              </div>
+            </div>
+          </div>
+
+          <div class="solution-banner">
+            <div class="solution-text">
+              これらの原因の多くは
+              <span class="solution-highlight"
+                >基本的な姿勢と手の形にありますが、中でも・・</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Technique Section -->
+        <section class="technique-section">
+          <div class="container">
+            <div class="technique-content">
+              <div class="technique-text">
+                <h3>実は、足元が最も重要なのです</h3>
+                <p>
+                  ピアノが上手なお子さんは、弾き始めのフォームができています。でも足元がおぼつかないのに、正しいフォームを作るのには無理があります。
+                </p>
+                <p>
+                  足の付け根、ひざ、足裏の3点がきちんと揃った姿勢こそが、美しい演奏の土台となります。
+                </p>
+                <p>
+                  正しい椅子の高さと位置を決め、足元を固めるだけでも、演奏に天と地の差が生まれます。
+                </p>
+              </div>
+              <div class="technique-image">
+                <!-- ここに画像（正しい姿勢を示す図など）を挿入 -->
+                <img
+                  src="images/piano_posture_diagram.png"
+                  alt="正しいピアノの姿勢を示す図"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ★★★ START: 新しく追加したセクション ★★★ -->
+        <section class="deep-dive-section">
+          <div class="container">
+            <div class="text-block">
+              <p>
+                ピアノ（エレクトーン）が上手な人は、鍵盤を巧みに操れる人です。強く弾いたり弱く弾いたり・・・・跳ねて、つないで、するどく、やわらかく・・・・歌うように踊るように・・・。これらを指先ひとつで弾き分けます。でも指先は、指の付け根、付け根は手首、手首は⇒腕⇒肩⇒背中⇒腰⇒足と全身つながっています。そして足が地にしっかりついていないと上手く弾けないのです。<br />
+                <strong>ためしに足をブラブラさせたままで弾いてみてください。いかがですか？</strong>
+              </p>
+            </div>
+
+            <div class="highlight-box">
+              これをするとしないでは、天と地ほどの差が出ます。<br />
+              折角のピアノを用意しても、効果半減なんです。
+            </div>
+
+            <div class="result-content">
+              <div class="result-image">
+                <!-- ここに画像（足台を使って驚いている様子のイラストなど）を挿入 -->
+                <img
+                  src="images/child_with_footrest.png"
+                  alt="足台を使ってピアノを弾く子供"
+                />
+              </div>
+              <div class="result-text">
+                <p>
+                  高さを合わせ、足台を置いてからこの理屈を子供さんに教えてあげると、<br />なんと、とたんに音色が変わります！！
+                </p>
+                <h3 class="big-quote">「なんと！こんなに違うのか！」</h3>
+                <p>と、お母さんはびっくりされます。</p>
+              </div>
+            </div>
+
+            <div class="parent-thoughts-box">
+                <p>でも、実際に目の当たりにしないと信じられないみたいです。</p>
+                <p>「もう、１，２年で背が伸びるから・・・・」</p>
+                <p>「お父さんに相談してから・・・・」</p>
+                <p>お金がかかったり、面倒だったりしますからね。わかりますその気持ち・・・・</p>
+                <p>でも、「ピアノ（エレクトーン）がほしい！」と言う子はいても、「足台がほしい！！」と、ねだる子供さんはいません。（笑）子供さんに選択の余地は無いのです。</p>
+                <p class="conclusion">ピアノをお持ちの方は、一刻も早く考えてあげてくださいね。</p>
+            </div>
+          </div>
+        </section>
+        <!-- ★★★ END: 新しく追加したセクション ★★★ -->
+
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+          <h2 class="section-title">正しい姿勢で得られる効果</h2>
+
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🎯</div>
+              <div class="benefit-title">正確な鍵盤感覚</div>
+              <div class="benefit-description">
+                安定した姿勢により、鍵盤の位置感覚が格段に向上し、迷わず正確に演奏できます。
+              </div>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">💫</div>
+              <div class="benefit-title">美しい音色</div>
+              <div class="benefit-description">
+                正しい姿勢により音色が劇的に改善され、表現力豊かな演奏が可能になります。
+              </div>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">✨</div> <!-- 絵文字を修正 -->
+              <div class="benefit-title">正しいタッチ</div>
+              <div class="benefit-description">
+                効率よく力が伝わり、綺麗なピアニッシモとフォルテが使い分けられます。
+              </div>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">⚡</div>
+              <div class="benefit-title">疲労軽減</div>
+              <div class="benefit-description">
+                効率的な身体の使い方で長時間の練習でも疲れにくく、集中力を維持できます。
+              </div>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">🚀</div>
+              <div class="benefit-title">上達速度向上</div>
+              <div class="benefit-description">
+                基礎が固まるため、新しい曲の習得速度が飛躍的に向上します。
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+          <div class="container">
+            <h2 class="section-title">ピアノ姿勢診断・無料相談受付中</h2>
+
+            <div class="contact-grid">
+              <div class="contact-card">
+                <span class="contact-icon">📧</span>
+                <div class="contact-title">メールでのお問い合わせ</div>
+                <div class="contact-info">
+                  <a href="mailto:info@toriimusic.co.jp"
+                    >info@toriimusic.co.jp</a
+                  >
                 </div>
+                <div class="contact-info">毎日必ずメールチェックします</div>
+              </div>
+            </div>
 
-                <div class="solution-banner">
-                    <div class="solution-text">
-                        これらの原因の多くは
-                        <span class="solution-highlight">基本的な姿勢と手の形にありますが、中でも・・</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Technique Section -->
-            <section class="technique-section">
-                <div class="container">
-                    <div class="technique-content">
-                        <div class="technique-text">
-                            <h3>実は、足元が最も重要なのです</h3>
-                            <p>ピアノが上手なお子さんは、弾き始めのフォームができています。でも足元がおぼつかないのに、正しいフォームを作るのには無理があります。</p>
-                            <p>足の付け根、ひざ、足裏の3点がきちんと揃った姿勢こそが、美しい演奏の土台となります。</p>
-                            <p>正しい椅子の高さと位置を決め、足元を固めるだけでも、演奏に天と地の差が生まれます。</p>
-                        </div>
-                        <div class="technique-image">
-                            <img src="/placeholder.svg?height=400&width=500" alt="正しいピアノの姿勢を示す図">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Benefits Section -->
-            <section class="benefits-section">
-                <h2 class="section-title">正しい姿勢で得られる効果</h2>
-                
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">🎯</div>
-                        <div class="benefit-title">正確な鍵盤感覚</div>
-                        <div class="benefit-description">安定した姿勢により、鍵盤の位置感覚が格段に向上し、迷わず正確に演奏できるようになります。</div>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">💫</div>
-                        <div class="benefit-title">美しい音色</div>
-                        <div class="benefit-description">正しい手の形と姿勢により、音色が劇的に改善され、表現力豊かな演奏が可能になります。</div>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">⚡</div>
-                        <div class="benefit-title">正しいタッチ</div>
-                        <div class="benefit-description">効率よく指先に力が伝わるので、綺麗なピアニッシモとフォルテが使い分けられるようになります。</div>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">⚡</div>
-                        <div class="benefit-title">疲労軽減</div>
-                        <div class="benefit-description">効率的な身体の使い方により、長時間の練習でも疲れにくく、集中力を維持できます。</div>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">🚀</div>
-                        <div class="benefit-title">上達速度向上</div>
-                        <div class="benefit-description">基礎がしっかりしているため、新しい曲の習得速度が飛躍的に向上します。</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section class="contact-section" id="contact">
-                <div class="container">
-                    <h2 class="section-title" style="color: white;">ピアノ姿勢診断・無料相談受付中</h2>
-                    
-                    <div class="contact-grid">
-                                                
-                        <div class="contact-card">
-                            <span class="contact-icon">📧</span>
-                            <div class="contact-title">メールでのお問い合わせ</div>
-                            <div class="contact-info">info@toriimusic.co.jp</div>
-                            <div class="contact-info">毎日必ずメールチェックします</div>
-                        </div>
-                    </div>
-
-                        <div style="text-align: center; margin-top: 40px; opacity: 0.8;">
-                        <h3 style="margin-bottom: 10px;">株式会社トリイ</h3>
-                        <p>〒520-1631　高島市今津町名小路1－1</p>
-                        <p>担当：ピアノ営業部</p>
-                    </div>
-                </div>
-            </section>
-        </div>
+            <div class="company-info">
+              <h3 style="margin-bottom: 10px">株式会社トリイ</h3>
+              <p>〒520-1631　高島市今津町名小路1－1</p>
+              <p>担当：ピアノ営業部</p>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
-</body>
+  </body>
 </html>
