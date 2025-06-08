@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正しいピアノ姿勢マスター講座 | 美しい演奏への第一歩</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .hero-header {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path d="M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,300 L0,300 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            color: white;
+            padding: 80px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            margin-top: -60px;
+            border-radius: 30px 30px 0 0;
+            position: relative;
+            z-index: 2;
+            padding: 80px 0 60px;
+        }
+
+        /* Worries Section */
+        .worries-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+            margin: 40px 0;
+            border-radius: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .worry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .worry-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .worry-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        }
+
+        .worry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .worry-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .worry-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .worry-description {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        /* Solution Banner */
+        .solution-banner {
+            background: linear-gradient(45deg, #ffeaa7, #fdcb6e);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-banner::before {
+            content: '✨';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(180deg); }
+        }
+
+        .solution-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .solution-highlight {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e17055;
+            display: block;
+        }
+
+        /* Technique Section */
+        .technique-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 60px 0;
+        }
+
+        .technique-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .technique-text h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .technique-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .technique-image {
+            text-align: center;
+        }
+
+        .technique-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .benefit-description {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 80px 0;
+            border-radius: 20px;
+            margin: 60px 0 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .contact-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-cta {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(238, 90, 36, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .technique-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .worry-grid,
+            .benefits-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                margin-top: -40px;
+                padding: 60px 0 40px;
+            }
+
+            .worries-section,
+            .technique-section,
+            .benefits-section,
+            .contact-section {
+                padding: 60px 0;
+                margin: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Header -->
+    <header class="hero-header">
+        <div class="container">
+            <h1 class="hero-title">正しいピアノ姿勢マスター講座</h1>
+            <p class="hero-subtitle">美しい演奏への第一歩は、正しい姿勢から始まります</p>
+            <a href="#contact" class="hero-cta">無料相談を始める</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Worries Section -->
+            <section class="worries-section">
+                <h2 class="section-title">こんなお悩みありませんか？</h2>
+                
+                <div class="worry-grid">
+                    <div class="worry-card">
+                        <div class="worry-icon">🎹</div>
+                        <div class="worry-text">真ん中の「ド」にサッと指が置けない</div>
+                        <div class="worry-description">鍵盤の位置感覚がつかめず、毎回手探りで探してしまう</div>
+                    </div>
+                    
+                    <div class="worry-card">
+                        <div class="worry-icon">👆</div>
+                        <div class="worry-text">「指のお引越し」で迷ってしまう</div>
+                        <div class="worry-description">スムーズな指の移動ができず、演奏が途切れがちになる</div>
+                    </div>
+                    
+                    <div class="worry-card">
+                        <div class="worry-icon">✋</div>
+                        <div class="worry-text">「手の形が悪い」と言われる</div>
+                        <div class="worry-description">正しい手の形がわからず、先生に注意されることが多い</div>
+                    </div>
+                    
+                    <div class="worry-card">
+                        <div class="worry-icon">🎵</div>
+                        <div class="worry-text">「もっと表情豊かに」と言われる</div>
+                        <div class="worry-description">感情を込めて弾こうとすると、技術的にぐちゃぐちゃになってしまう</div>
+                    </div>
+                </div>
+
+                <div class="solution-banner">
+                    <div class="solution-text">
+                        ピアノで挫折してしまう原因の多くは
+                        <span class="solution-highlight">基本的な姿勢と手の形にあります</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technique Section -->
+            <section class="technique-section">
+                <div class="container">
+                    <div class="technique-content">
+                        <div class="technique-text">
+                            <h3>実は、足元が最も重要なのです</h3>
+                            <p>ピアノが上手な人は、練習を始める時の座り方がきちんとできています。足元がおぼつかないのに、指の運動をさせるのは無理があります。</p>
+                            <p>足の付け根、ひざ、足裏の3点がきちんと揃った姿勢こそが、美しい演奏の土台となります。</p>
+                            <p>正しい椅子の高さと足元を固めるだけでも、演奏に天と地の差が生まれます。</p>
+                        </div>
+                        <div class="technique-image">
+                            <img src="/placeholder.svg?height=400&width=500" alt="正しいピアノの姿勢を示す図">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benefits Section -->
+            <section class="benefits-section">
+                <h2 class="section-title">正しい姿勢で得られる効果</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <div class="benefit-title">正確な鍵盤感覚</div>
+                        <div class="benefit-description">安定した姿勢により、鍵盤の位置感覚が格段に向上し、迷わず正確に演奏できるようになります。</div>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💫</div>
+                        <div class="benefit-title">美しい音色</div>
+                        <div class="benefit-description">正しい手の形と姿勢により、音色が劇的に改善され、表現力豊かな演奏が可能になります。</div>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-title">疲労軽減</div>
+                        <div class="benefit-description">効率的な身体の使い方により、長時間の練習でも疲れにくく、集中力を維持できます。</div>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🚀</div>
+                        <div class="benefit-title">上達速度向上</div>
+                        <div class="benefit-description">基礎がしっかりしているため、新しい曲の習得速度が飛躍的に向上します。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact-section" id="contact">
+                <div class="container">
+                    <h2 class="section-title" style="color: white;">ピアノ姿勢診断・無料相談受付中</h2>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <span class="contact-icon">📞</span>
+                            <div class="contact-title">お電話でのお問い合わせ</div>
+                            <div class="contact-info">0740-22-2063</div>
+                            <div class="contact-info">10:30-19:30　月曜定休</div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <span class="contact-icon">📱</span>
+                            <div class="contact-title">携帯電話</div>
+                            <div class="contact-info">090-4296-1913</div>
+                            <div class="contact-info">吉田携帯</div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <span class="contact-icon">📧</span>
+                            <div class="contact-title">メールでのお問い合わせ</div>
+                            <div class="contact-info">info@toriimusic.co.jp</div>
+                            <div class="contact-info">毎日必ずメールチェックします</div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <a href="tel:090-4296-1913" class="contact-cta">今すぐお電話で相談する</a>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 40px; opacity: 0.8;">
+                        <h3 style="margin-bottom: 10px;">株式会社トリイ</h3>
+                        <p>〒520-1631　高島市今津町名小路1－1</p>
+                        <p>担当：ピアノ営業部</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
