@@ -6,12 +6,12 @@
     <title>正しいピアノ姿勢マスター講座 | 美しい演奏への第一歩</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- 既存のLPに合わせてフォントをNoto Sans JPに絞り込み -->
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <style>
+      /* 既存のスタイルはそのまま */
       * {
         margin: 0;
         padding: 0;
@@ -22,7 +22,6 @@
         font-family: 'Noto Sans JP', sans-serif;
         line-height: 1.7;
         color: #333;
-        /* 背景色を既存LPに合わせて調整 */
         background-color: #f8f8f8;
         min-height: 100vh;
       }
@@ -33,9 +32,7 @@
         padding: 0 20px;
       }
 
-      /* Header */
       .hero-header {
-        /* 背景を既存LPに合わせて調整 */
         background: linear-gradient(135deg, #e0f2f7 0%, #d1e3ff 100%);
         color: #333;
         padding: 80px 0 100px;
@@ -45,7 +42,6 @@
       }
 
       .hero-title {
-        /* フォントをNoto Sans JPに統一 */
         font-family: 'Noto Sans JP', sans-serif;
         font-size: 2.8rem;
         font-weight: 700;
@@ -57,22 +53,19 @@
       .hero-subtitle {
         font-size: 1.2rem;
         font-weight: 400;
-        margin-bottom: 0; /* CTAボタンがないためマージンを調整 */
         opacity: 1;
         color: #555;
       }
 
-      /* Main Content */
       .main-content {
         background: white;
-        margin-top: -60px; /* ヘッダーとの重なりを維持し、柔らかな印象に */
+        margin-top: -60px;
         border-radius: 30px 30px 0 0;
         position: relative;
         z-index: 2;
         padding: 60px 0;
       }
 
-      /* Section Styles */
       .section-title {
         text-align: center;
         font-size: 2.2rem;
@@ -94,10 +87,9 @@
         border-radius: 2px;
       }
 
-      /* Worries Section */
       .worries-section {
         padding: 40px 0;
-        background: #fff; /* 背景を白に */
+        background: #fff;
       }
 
       .worry-grid {
@@ -143,7 +135,6 @@
         font-size: 0.9rem;
       }
 
-      /* Solution Banner */
       .solution-banner {
         background-color: #ffffe0;
         border: 2px solid #ffd700;
@@ -168,7 +159,6 @@
         display: block;
       }
 
-      /* Technique Section */
       .technique-section {
         padding: 60px 0;
         background-color: #f8f8f8;
@@ -203,90 +193,194 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       }
 
-      /* ★★★ START: 新しく追加したセクションのスタイル ★★★ */
-      .deep-dive-section {
+      /* ★★★ START: 新しいセクションのスタイル (既存LPに合わせて調整) ★★★ */
+      .whole-body-section {
         padding: 60px 0;
         margin: 40px 0;
-      }
-
-      .deep-dive-section .text-block {
-        max-width: 800px;
-        margin: 0 auto 40px;
-        padding: 25px;
         background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        border-left: 5px solid #667eea;
       }
 
-      .deep-dive-section .text-block p {
-        font-size: 1rem;
-        line-height: 1.8;
-      }
-
-      .deep-dive-section .text-block strong {
-        color: #d9534f;
-        font-weight: 700;
-      }
-
-      .deep-dive-section .highlight-box {
+      .whole-body-section .header {
         text-align: center;
-        margin: 40px auto;
-        padding: 20px;
-        background-color: #f0f8ff;
-        border-radius: 10px;
-        border: 2px dashed #add8e6;
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: #0056b3;
+        margin-bottom: 3rem;
       }
 
-      .deep-dive-section .result-content {
+      .whole-body-section .main-title {
+        font-size: 2.2rem; /* section-titleに合わせる */
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+      }
+
+      .whole-body-section .subtitle {
+        font-size: 1.25rem;
+        font-weight: 400; /* 太さを調整 */
+        color: #475569;
+        margin-bottom: 1rem;
+      }
+
+      .whole-body-section .divider {
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        margin: 0 auto;
+        border-radius: 2px;
+      }
+
+      .whole-body-section .body-parts-grid {
         display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .whole-body-section .body-part-card {
+        background: #f8f9ff;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e8f2ff;
+        transition: all 0.3s ease;
+        display: flex;
         align-items: center;
-        margin: 60px 0;
+        gap: 1rem;
       }
 
-      .deep-dive-section .result-image img {
-        max-width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      .whole-body-section .body-part-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
       }
 
-      .deep-dive-section .result-text {
+      .whole-body-section .icon-container {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient); /* 個別グラデーションを維持 */
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        flex-shrink: 0;
+      }
+      
+      /* 個別のグラデーション定義 */
+      .whole-body-section .fingers { --gradient: linear-gradient(135deg, #f472b6, #fb7185); }
+      .whole-body-section .wrist { --gradient: linear-gradient(135deg, #a855f7, #8b5cf6); }
+      .whole-body-section .arms { --gradient: linear-gradient(135deg, #3b82f6, #6366f1); }
+      .whole-body-section .shoulders { --gradient: linear-gradient(135deg, #06b6d4, #0891b2); }
+      .whole-body-section .waist { --gradient: linear-gradient(135deg, #10b981, #059669); }
+      .whole-body-section .feet { --gradient: linear-gradient(135deg, #f59e0b, #ea580c); }
+
+      .whole-body-section .text-content h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 0.25rem;
+      }
+
+      .whole-body-section .text-content p {
+        font-size: 0.9rem;
+        color: #64748b;
+        line-height: 1.4;
+      }
+      
+      .whole-body-section .tip-section {
+        background: #e0f2fe; /* 既存LPの青系背景に合わせる */
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.1);
+        margin-bottom: 2rem;
+      }
+      
+      .whole-body-section .tip-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      
+      .whole-body-section .tip-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #3b82f6, #6366f1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: white; /* アイコンの文字色を白に */
+        margin-right: 0.75rem;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      }
+
+      .whole-body-section .tip-header h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1e293b;
+      }
+
+      .whole-body-section .tip-content p {
+        font-size: 1rem;
+        color: #475569;
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+      }
+
+      .whole-body-section .highlight-box {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 0.75rem;
+        border-left: 3px solid #667eea;
+        margin: 0.75rem 0;
+      }
+
+      .whole-body-section .emphasis-box {
+        background: #fff8e1; /* 既存LPの黄色系背景に合わせる */
+        border-radius: 10px;
+        padding: 1rem;
+        border-left: 3px solid #f59e0b;
+        margin-top: 0.75rem;
+      }
+
+      .whole-body-section .emphasis-box p {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin: 0;
+      }
+      
+      .whole-body-section .footer {
         text-align: center;
       }
 
-      .deep-dive-section .result-text .big-quote {
-        font-size: 2.2rem;
+      .whole-body-section .footer-card {
+        display: inline-block;
+        background: #333; /* 既存のコンタクトセクションの色に合わせる */
+        border-radius: 16px;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 8px 25px rgba(30, 41, 59, 0.3);
+        color: white;
+      }
+
+      .whole-body-section .footer-card p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .whole-body-section .footer-emphasis {
+        font-size: 1.25rem;
         font-weight: 700;
-        color: #d9534f;
-        margin: 20px 0;
-        line-height: 1.3;
+        color: #fbbf24; /* 強調色を調整 */
+        display: block;
+        margin-top: 0.25rem;
       }
+      /* ★★★ END: 新しいセクションのスタイル ★★★ */
 
-      .deep-dive-section .parent-thoughts-box {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 30px;
-        background-color: #fff8e1;
-        border-radius: 10px;
-        border: 1px solid #ffe082;
-      }
 
-      .deep-dive-section .parent-thoughts-box p {
-        margin-bottom: 15px;
-      }
-      .deep-dive-section .parent-thoughts-box p.conclusion {
-        font-weight: 700;
-        color: #c62828;
-        margin-top: 20px;
-      }
-      /* ★★★ END: 新しく追加したセクションのスタイル ★★★ */
-
-      /* Benefits Section */
       .benefits-section {
         padding: 60px 0;
         background-color: #f8f8f8;
@@ -332,7 +426,6 @@
         font-size: 0.85rem;
       }
 
-      /* Contact Section */
       .contact-section {
         background: #333;
         color: white;
@@ -341,19 +434,16 @@
         margin: 60px 0 0;
       }
 
-      .contact-section .section-title {
-        color: white;
-      }
       .contact-section .section-title::after {
         background: rgba(255, 255, 255, 0.5);
       }
 
       .contact-grid {
         display: grid;
-        grid-template-columns: 1fr; /* 1列に変更 */
+        grid-template-columns: 1fr;
         gap: 30px;
         margin-top: 40px;
-        max-width: 400px; /* 中央に寄せるために幅を制限 */
+        max-width: 400px;
         margin-left: auto;
         margin-right: auto;
       }
@@ -404,14 +494,9 @@
         .section-title {
           font-size: 1.8rem;
         }
-        .technique-content,
-        .deep-dive-section .result-content {
+        .technique-content {
           grid-template-columns: 1fr;
           gap: 30px;
-        }
-        /* 画像が上、テキストが下に来るように */
-        .deep-dive-section .result-content .result-image {
-            order: -1;
         }
         .benefits-grid {
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -420,7 +505,6 @@
     </style>
   </head>
   <body>
-    <!-- Hero Header -->
     <header class="hero-header">
       <div class="container">
         <h1 class="hero-title">ピアノが届いたら一番にして欲しいこと</h1>
@@ -430,10 +514,8 @@
       </div>
     </header>
 
-    <!-- Main Content -->
     <main class="main-content">
       <div class="container">
-        <!-- Worries Section -->
         <section class="worries-section">
           <h2 class="section-title">お子さんのピアノお悩みあるある</h2>
 
@@ -445,7 +527,6 @@
                 鍵盤の位置感覚がつかめず、毎回手探りで探してしまう
               </div>
             </div>
-
             <div class="worry-card">
               <div class="worry-icon">👆</div>
               <div class="worry-text">「指のお引越し」で迷ってしまう</div>
@@ -453,7 +534,6 @@
                 スムーズな指の移動ができず、演奏が途切れがちになる
               </div>
             </div>
-
             <div class="worry-card">
               <div class="worry-icon">✋</div>
               <div class="worry-text">「手の形が悪い」と言われる</div>
@@ -461,7 +541,6 @@
                 正しい手の形がわからず、先生に注意されることが多い
               </div>
             </div>
-
             <div class="worry-card">
               <div class="worry-icon">🎵</div>
               <div class="worry-text">「もっと表情豊かに」と言われる</div>
@@ -481,7 +560,6 @@
           </div>
         </section>
 
-        <!-- Technique Section -->
         <section class="technique-section">
           <div class="container">
             <div class="technique-content">
@@ -491,11 +569,10 @@
                   ピアノが上手なお子さんは、弾き始めのフォームができています。でも足元がおぼつかないのに、正しいフォームを作るのには無理があります。
                 </p>
                 <p>
-                  正しい椅子の高さと位置を決め、足台（踏み台）を置くだけで、演奏に天と地ほどの差が生まれます。
+                  正しい椅子の高さと位置を決め、足台（踏み台）を置くだけで、演奏に天と地の差が生まれます。
                 </p>
               </div>
               <div class="technique-image">
-                <!-- ここに画像（正しい姿勢を示す図など）を挿入 -->
                 <img
                   src="images/piano_posture_diagram.png"
                   alt="正しいピアノの姿勢を示す図"
@@ -505,52 +582,306 @@
           </div>
         </section>
 
-        <!-- ★★★ START: 新しく追加したセクション ★★★ -->
-        <section class="deep-dive-section">
-          <div class="container">
-            <div class="text-block">
-              <p>
-                ピアノ（エレクトーン）が上手な人は、鍵盤を巧みに操れる人です。強く弾いたり弱く弾いたり・・・・跳ねて、つないで、するどく、やわらかく・・・・歌うように踊るように・・・。これらを指先ひとつで弾き分けます。でも指先は、指の付け根、付け根は手首、手首は⇒腕⇒肩⇒背中⇒腰⇒足と全身つながっています。そして足が地にしっかりついていないと上手く弾けないのです。<br />
-                <strong>ためしに足をブラブラさせたままで弾いてみてください。いかがですか？</strong>
-              </p>
+       <!-- ★★★ START: 差し替える新しいセクション ★★★ -->
+<style>
+    /* 新しいセクション専用のスタイル */
+    .kinetic-chain-section {
+        padding: 80px 0;
+        background-color: #f8f9ff;
+        overflow: hidden; /* アニメーションのため */
+    }
+
+    .kinetic-chain-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .kinetic-chain-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+    }
+
+    .kinetic-chain-subtitle {
+        font-size: 1.2rem;
+        color: #475569;
+    }
+
+    .kinetic-chain-container {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* 全身のつながりを表現する中央の線 */
+    .timeline-spine {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 4px;
+        background-color: #d1d5db;
+        border-radius: 2px;
+        transform: translateX(-50%);
+        /* アニメーションの初期状態 */
+        height: 0;
+        opacity: 0;
+        transition: height 2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
+    }
+    .timeline-spine.is-visible {
+        height: 100%;
+        opacity: 1;
+    }
+
+    .chain-item {
+        position: relative;
+        width: calc(50% - 40px); /* 半分の幅からマージンを引く */
+        margin-bottom: 50px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        border: 1px solid #e5e7eb;
+        /* アニメーションの初期状態 */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .chain-item.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* 交互に配置 */
+    .item-left {
+        left: 0;
+    }
+
+    .item-right {
+        left: calc(50% + 40px);
+    }
+
+    /* カードから中央線へのコネクター */
+    .chain-item::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 3px;
+        background-color: #9ca3af;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .item-left::after {
+        right: -20px;
+    }
+
+    .item-right::after {
+        left: -20px;
+    }
+    
+    /* 各カードのアイコンとテキスト */
+    .item-content {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      flex-shrink: 0;
+      background: var(--gradient); /* 各カードの色 */
+    }
+    .item-text h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.25rem;
+    }
+    .item-text p {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* 各カードの個別スタイル */
+    .feet { --gradient: linear-gradient(135deg, #f59e0b, #ea580c); }
+    .waist { --gradient: linear-gradient(135deg, #10b981, #059669); }
+    .shoulders { --gradient: linear-gradient(135deg, #06b6d4, #0891b2); }
+    .arms { --gradient: linear-gradient(135deg, #3b82f6, #6366f1); }
+    .wrist { --gradient: linear-gradient(135deg, #a855f7, #8b5cf6); }
+    .fingers { --gradient: linear-gradient(135deg, #f472b6, #fb7185); }
+
+    /* 結論となるカード */
+    .chain-result {
+        clear: both;
+        position: relative;
+        padding-top: 30px;
+        text-align: center;
+        /* アニメーションの初期状態 */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 1.5s; /* 全て表示された後に表示 */
+    }
+    .chain-result.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .chain-result-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .chain-result-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 768px) {
+        .timeline-spine {
+            left: 20px; /* 左端に寄せる */
+        }
+        .chain-item {
+            width: calc(100% - 60px); /* 幅を調整 */
+            left: 60px; /* 線からの距離 */
+        }
+        .item-right {
+            left: 60px; /* 右側も同じ位置に */
+        }
+        .chain-item::after {
+            left: -20px;
+        }
+    }
+</style>
+
+<section class="kinetic-chain-section">
+    <div class="kinetic-chain-header">
+        <h2 class="kinetic-chain-title">演奏は、足元から指先への連鎖</h2>
+        <p class="kinetic-chain-subtitle">ピアノは体全体で奏でる楽器。その力の流れを体感しましょう。</p>
+    </div>
+
+    <div class="kinetic-chain-container">
+        <div class="timeline-spine"></div>
+        
+        <!-- 1. 足 -->
+        <div class="chain-item item-left feet">
+            <div class="item-content">
+                <div class="item-icon">🦶</div>
+                <div class="item-text">
+                    <h3>土台となる「足」</h3>
+                    <p>地に足をつけることで、全身が安定し、余計な力みが抜けます。</p>
+                </div>
             </div>
-
-            <div class="highlight-box">
-              これをするとしないでは、天と地ほどの差が出ます。<br />
-              折角のピアノを用意しても、効果半減なんです。
+        </div>
+        
+        <!-- 2. 腰 -->
+        <div class="chain-item item-right waist">
+            <div class="item-content">
+                <div class="item-icon">🪑</div>
+                <div class="item-text">
+                    <h3>バランスの中心「腰」</h3>
+                    <p>安定した足元が、体幹である腰を支え、上半身の自由を生みます。</p>
+                </div>
             </div>
-
-            <div class="result-content">
-              <div class="result-image">
-                <!-- ここに画像（足台を使って驚いている様子のイラストなど）を挿入 -->
-                <img
-                  src="images/child_with_footrest.png"
-                  alt="足台を使ってピアノを弾く子供"
-                />
-              </div>
-              <div class="result-text">
-                <p>
-                  高さを合わせ、足台を置いてからこの理屈を子供さんに教えてあげると、<br />なんと、とたんに音色が変わります！！
-                </p>
-                <h3 class="big-quote">「なんと！こんなに違うのか！」</h3>
-                <p>と、お母さんはびっくりされます。</p>
-              </div>
+        </div>
+        
+        <!-- 3. 肩と背中 -->
+        <div class="chain-item item-left shoulders">
+            <div class="item-content">
+                <div class="item-icon">🧍</div>
+                <div class="item-text">
+                    <h3>姿勢の土台「肩と背中」</h3>
+                    <p>腰からの安定が、腕を自由に動かすための土台となる姿勢を作ります。</p>
+                </div>
             </div>
-
-            <div class="parent-thoughts-box">
-                <p>でも、実際に目の当たりにしないと信じられないみたいです。</p>
-                <p>「もう、１，２年で背が伸びるから・・・・」</p>
-                <p>「お父さんに相談してから・・・・」</p>
-                <p>お金がかかったり、面倒だったりしますからね。わかりますその気持ち・・・・</p>
-                <p>でも、「ピアノ（エレクトーン）がほしい！」と言う子はいても、「足台がほしい！！」と、ねだる子供さんはいません。（笑）子供さんに選択の余地は無いのです。</p>
-                <p class="conclusion">ピアノをお持ちの方は、一刻も早く考えてあげてくださいね。</p>
+        </div>
+        
+        <!-- 4. 腕 -->
+        <div class="chain-item item-right arms">
+            <div class="item-content">
+                <div class="item-icon">💪</div>
+                <div class="item-text">
+                    <h3>力の伝達「腕」</h3>
+                    <p>リラックスした肩から、重力を使った自然なエネルギーが腕に伝わります。</p>
+                </div>
             </div>
-          </div>
-        </section>
-        <!-- ★★★ END: 新しく追加したセクション ★★★ -->
+        </div>
+        
+        <!-- 5. 手首 -->
+        <div class="chain-item item-left wrist">
+            <div class="item-content">
+                <div class="item-icon">🤲</div>
+                <div class="item-text">
+                    <h3>しなやかな動きの要「手首」</h3>
+                    <p>腕からのエネルギーを柔軟に受け止め、指先への橋渡しをします。</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 6. 指先 -->
+        <div class="chain-item item-right fingers">
+            <div class="item-content">
+                <div class="item-icon">🖐</div>
+                <div class="item-text">
+                    <h3>音楽を紡ぐ「指先」</h3>
+                    <p>全身からの安定したエネルギーが、繊細で表現力豊かなタッチを可能にします。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 結論 -->
+        <div class="chain-result">
+            <div class="chain-result-icon">✨</div>
+            <div class="chain-result-text">
+                この繋がりが、自由な表現と上達を生み出すのです
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // スクロールアニメーションのためのJavaScript
+    const animatedElements = document.querySelectorAll('.kinetic-chain-section .chain-item, .kinetic-chain-section .timeline-spine, .kinetic-chain-section .chain-result');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // 各要素に順番にディレイを設定してアニメーション
+                const delay = entry.target.classList.contains('chain-item') ? Array.from(document.querySelectorAll('.chain-item')).indexOf(entry.target) * 150 : 0;
+                
+                setTimeout(() => {
+                    entry.target.classList.add('is-visible');
+                }, delay);
+                
+                observer.unobserve(entry.target); // 一度表示したら監視を停止
+            }
+        });
+    }, {
+        threshold: 0.1 // 10%見えたら発火
+    });
+
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+</script>
+<!-- ★★★ END: 差し替える新しいセクション ★★★ -->
 
 
-        <!-- Benefits Section -->
         <section class="benefits-section">
           <h2 class="section-title">正しい姿勢で得られる効果</h2>
 
@@ -562,7 +893,6 @@
                 安定した姿勢により、鍵盤の位置感覚が格段に向上し、迷わず正確に演奏できます。
               </div>
             </div>
-
             <div class="benefit-card">
               <div class="benefit-icon">💫</div>
               <div class="benefit-title">美しい音色</div>
@@ -570,15 +900,13 @@
                 正しい姿勢により音色が劇的に改善され、表現力豊かな演奏が可能になります。
               </div>
             </div>
-
             <div class="benefit-card">
-              <div class="benefit-icon">✨</div> <!-- 絵文字を修正 -->
+              <div class="benefit-icon">✨</div>
               <div class="benefit-title">正しいタッチ</div>
               <div class="benefit-description">
                 効率よく力が伝わり、綺麗なピアニッシモとフォルテが使い分けられます。
               </div>
             </div>
-
             <div class="benefit-card">
               <div class="benefit-icon">⚡</div>
               <div class="benefit-title">疲労軽減</div>
@@ -586,7 +914,6 @@
                 効率的な身体の使い方で長時間の練習でも疲れにくく、集中力を維持できます。
               </div>
             </div>
-
             <div class="benefit-card">
               <div class="benefit-icon">🚀</div>
               <div class="benefit-title">上達速度向上</div>
@@ -597,7 +924,6 @@
           </div>
         </section>
 
-        <!-- Contact Section -->
         <section class="contact-section" id="contact">
           <div class="container">
             <h2 class="section-title">ピアノ姿勢診断・無料相談受付中</h2>
@@ -607,9 +933,7 @@
                 <span class="contact-icon">📧</span>
                 <div class="contact-title">メールでのお問い合わせ</div>
                 <div class="contact-info">
-                  <a href="mailto:info@toriimusic.co.jp"
-                    >info@toriimusic.co.jp</a
-                  >
+                  <a href="mailto:info@toriimusic.co.jp">info@toriimusic.co.jp</a>
                 </div>
                 <div class="contact-info">毎日必ずメールチェックします</div>
               </div>
